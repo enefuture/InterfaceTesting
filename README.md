@@ -8,6 +8,14 @@
     在自动化收集，处理单接口，业务接口前，请先执行 
     python initConfig文件，使配置生效。尤其是更改配置后，请一定执行该文件
 
+#流程说明
+模块1：单接口可用性测试
+ 
+模块2：业务接口可用性测试
+ 
+总流程图：
+ 
+详细请参照PTT说明操作。
 #配置配置文件
 【程序的配置文件】
     在conf/config.py文件下，其中涉及四个配置
@@ -30,9 +38,10 @@
           filePath : 收集文件的存储位置，配置为，存储的根路径，与配置文件中的
                      FIDDLER_FILTER_PATH相同。
           projectName：项目名称，更换项目时，记得修改此处的项目名。此处是采用按日期中的天来划分项目的数据文件，apk包大概是一天一个测试版本。
-    （2） 349行，其中的函数DivideUrl是划分请求的接口分类的方法，在第二个参数中
-          需要配置划分的依据，依据需要根据某一项目的URL来明确，如爆点的是‘title’，影视大全是‘method’方法。
-    js文件，在Fiddler自动收集某一项目的请求数据时，需要配置Fiddler的过滤设置，替换位置在 Rules->Customize Rules,打开后替换全部的内容即可。
+ 
+（2） 278行，其中的函数DivideUrl是划分请求的接口存放文件名方法
+  
+    替换FiddlerRules.js文件，在Fiddler自动收集某一项目的请求数据时，需要配置Fiddler的过滤设置，替换位置在 Rules->Customize Rules,打开后替换全部的内容即可。
 
 #Fiddler自动化数据收集
     首先：运行 python initConfig.py 文件，更新配置
@@ -42,20 +51,7 @@
             D:\\FiddlerFilterApi\\Pop_2016-9-5 文件名重命名为 Pop，
             就是只要项目名称，不要收集的日期
     结果：Fiddler回家配置的过滤收集域名下的所有数据根据函数DivideUrl的区分结果
-          ，写入相应的txt数据中。其数据格式如下：
-            Request date: 2016-09-02 16:9:47
-            Request http: http://
-            Request url: api.app.tvfanqie.com/mandroid/channel/home?ss=-1&token=d7aae496bce0855c4f8be21bbbffdbdc&ver=1&ch=&fquc=NTgzYTg3ZjRlOSZuaWNrbmFtZT1iYW9tYXgmc2lnbj1iMTFiMTc2ODRmY2RlYzIxMGU0YmExNjg4MWRhNzAzYXhpYW5rYW51Y3VpZD0xMDAzNjQ4MjYxMiZsb2dpbl90aW1lPTE0NzI3OTcyNzEmdGh1bWI9MV90MDBkZjU1MWE%3D
-            Request header: GET /mandroid/channel/home?ss=-1&token=d7aae496bce0855c4f8be21bbbffdbdc&ver=1&ch=&fquc=NTgzYTg3ZjRlOSZuaWNrbmFtZT1iYW9tYXgmc2lnbj1iMTFiMTc2ODRmY2RlYzIxMGU0YmExNjg4MWRhNzAzYXhpYW5rYW51Y3VpZD0xMDAzNjQ4MjYxMiZsb2dpbl90aW1lPTE0NzI3OTcyNzEmdGh1bWI9MV90MDBkZjU1MWE%3D HTTP/1.1
-            Accept-Encoding: gzip
-            Host: api.app.tvfanqie.com
-            Connection: Keep-Alive
-            User-Agent: 360 Video App/1.0 Android/5.1.1 QIHU
-            Request body: 
-            Response code: 200
-            Response body: 1610d30359330905b3ddc6aad6b3b931{"error":0,"msg":"ok","data":[{"title":"推荐","mini_category":null},{"title":"搞笑","mini_category":"400"},{"title":"美女","mini_category":"1500"},{"title":"游戏","mini_category":"600"},{"title":"资讯","mini_category":"100"},{"title":"音乐","mini_category":"700"},{"title":"亲子","mini_category":"900"},{"title":"科技","mini_category":"1300"},{"title":"汽车","mini_category":"800"},{"title":"旅游","mini_category":"1100"},{"title":"生活","mini_category":"1200"},{"title":"时尚","mini_category":"1000"},{"title":"军事","mini_category":"1400"},{"title":"电视台","mini_category":""}]}
-            Session end
-          其中用 Session end 区分一条数据的完成
+          ，写入相应的txt数据中,其中用 Session end 区分一条数据的完成.
 
 #处理Fiddler收集数据
     在自动化收集完成后，可以通过 python dealFiddlerFilter.py来解析相应的txt文件，生成excel数据，用作测试人员筛选可行的用例case。
