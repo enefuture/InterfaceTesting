@@ -12,9 +12,9 @@
 模块1：单接口可用性测试
 ![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/1.png)
 模块2：业务接口可用性测试
- 
+![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/2.png)
 总流程图：
- 
+![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/3.png)
 详细请参照PTT说明操作。
 #配置配置文件
 【程序的配置文件】
@@ -38,9 +38,9 @@
           filePath : 收集文件的存储位置，配置为，存储的根路径，与配置文件中的
                      FIDDLER_FILTER_PATH相同。
           projectName：项目名称，更换项目时，记得修改此处的项目名。此处是采用按日期中的天来划分项目的数据文件，apk包大概是一天一个测试版本。
- 
-（2） 278行，其中的函数DivideUrl是划分请求的接口存放文件名方法
-  
+           ![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/4.png)
+    （2） 278行，其中的函数DivideUrl是划分请求的接口存放文件名方法
+           ![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/5.png)  
     替换FiddlerRules.js文件，在Fiddler自动收集某一项目的请求数据时，需要配置Fiddler的过滤设置，替换位置在 Rules->Customize Rules,打开后替换全部的内容即可。
 
 #Fiddler自动化数据收集
@@ -145,7 +145,7 @@
      说明当前需要的参数tkuc的值需要去测试数据中id=0的返回结果中的result['data']['setCookie']中去读取，然后会带着去请求当前的url。
 
 #[测试报告]
-    测试报告会在对应的 data目录下的项目名称下的单接口或者业务接口的目录下，以日期为后缀的html文件。在浏览器中查看相关的测试结果即可。如：/data/Pop/singleInterface/report_2016-09-12.html
+    测试报告会在对应的 data目录下的项目名称下的单接口或者业务接口的目录下，以日期为后缀的html文件。在浏览器中查看相关的测试结果即可。如：/data/Pop/singleInterface/report_2018-01-2.html
 
 
 
