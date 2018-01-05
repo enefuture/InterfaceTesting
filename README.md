@@ -1,12 +1,10 @@
 # 自动化接口测试说明
     [运行环境说明]
     python环境：python 2.7 详细版本号 python 2.7.12rc1
-    依赖包：xlrd，xlsxwriter
-    手动安装时，在命令行环境下进入相关包文件目录下进行安装，运行 
-    python setup.py install
-    等待安装结束即可。
-    在自动化收集，处理单接口，业务接口前，请先执行 
-    python initConfig文件，使配置生效。尤其是更改配置后，请一定执行该文件
+    依赖包:
+    xlrd:[下载](https://pan.baidu.com/s/1nvBrA6d)
+    xlsxwriter[下载](https://pan.baidu.com/s/1c1Gd4vI)
+    手动安装时，在命令行环境下进入相关包文件目录下进行安装，运行 python setup.py install等待安装结束即可。在自动化收集，处理单接口，业务接口前，请先执行python initConfig命令，使配置生效。尤其是更改配置后，请一定执行该文件
 
 # 流程说明
 ## 模块1：单接口可用性测试
