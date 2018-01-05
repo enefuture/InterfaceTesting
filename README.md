@@ -15,7 +15,7 @@
 ![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/2.png)
 ## 总流程图：
 ![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/3.png)
-详细请参照PTT说明操作。
+详细请参照PTT：[接口自动化流程及设计详解.pptx](https://github.com/enefuture/InterfaceTesting/blob/master/source/ppt/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%AE%BE%E8%AE%A1%E8%AF%A6%E8%A7%A3.pptx)说明操作。
 # 配置配置文件
 ## 【程序的配置文件】
     在conf/config.py文件下，其中涉及四个配置
