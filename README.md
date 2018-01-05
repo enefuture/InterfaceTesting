@@ -10,7 +10,7 @@
 
 #流程说明
 模块1：单接口可用性测试
- 
+![image](https://github.com/enefuture/InterfaceTesting/blob/master/source/images/1.png)
 模块2：业务接口可用性测试
  
 总流程图：
